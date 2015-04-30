@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+     <parent>
+        <groupId>br.com.keepitsimple</groupId>
+        <artifactId>bone-collector</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>br.com.keepitsimple</groupId>
+    <artifactId>bone-collector-core</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Bone Collector Core</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mongojack</groupId>
+            <artifactId>mongojack</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-annotation</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>br.com.keepitsimple</groupId>
+            <artifactId>bone-collector-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+        </plugins>
+    </build>
+</project>
