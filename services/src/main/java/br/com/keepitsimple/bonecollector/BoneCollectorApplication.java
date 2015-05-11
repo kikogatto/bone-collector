@@ -60,7 +60,7 @@ public class BoneCollectorApplication extends Application<BoneCollectorConfigura
         environment.lifecycle().manage(mongoServer);
         environment.healthChecks().register(MongoHealthCheck.class.getName(), new MongoHealthCheck(mongoClient));
         DB db = mongoClient.getDB("bone-collector");
-        JacksonDBCollection<Usage, String> usage = JacksonDBCollection.wrap(db.getCollection("usage"), Usage.class, String.class);
+        JacksonDBCollection<Usage, Long> usage = JacksonDBCollection.wrap(db.getCollection("usage"), Usage.class, Long.class);
  
         environment.jersey().register(new UsageResource(new UsageRepository((usage))));		
 	}

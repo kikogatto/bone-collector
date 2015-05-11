@@ -17,8 +17,11 @@ import br.com.keepitsimple.bonecollector.representation.Usage;
 import com.codahale.metrics.annotation.Timed;
 
 /**
+ * This class represents a REST resource for Usage
+ * 
  * @author gatto
  *
+ * @since 0.0.1 
  */
 @Path("/usage")
 @Produces(MediaType.APPLICATION_JSON)
@@ -26,7 +29,7 @@ public class UsageResource {
 	private final UsageRepository usageRepository;
 	
 	/**
-	 * 
+	 * Creates e new UsageResouce with the given repository
 	 * @param usageRepository
 	 */
 	public UsageResource(UsageRepository usageRepository) {
@@ -35,19 +38,19 @@ public class UsageResource {
 	}
 
 	/**
-	 * 
+	 * Persists the given usage
 	 * @param usage
-	 * @return
+	 * @return the now persisted Usage
 	 */
 	@Timed
     @POST
     public Usage log(Usage usage){
-    	return this.usageRepository.logUse(usage);
+    	return this.usageRepository.saveOrUpdate(usage);
     }
     
     /**
-     * 
-     * @return
+     * Lists all persisted usages
+     * @return a List Object with all the Usages
      */
 	@Timed
     @GET

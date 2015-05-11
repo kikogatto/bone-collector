@@ -27,6 +27,11 @@
                 <version>${dropwizard.version}</version>
             </dependency>
             <dependency>
+                <groupId>io.dropwizard</groupId>
+                <artifactId>dropwizard-testing</artifactId>
+                <version>${dropwizard.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.hubspot.dropwizard</groupId>
                 <artifactId>dropwizard-guice</artifactId>
                 <version>0.7.0.2</version>
@@ -81,6 +86,16 @@
                 <artifactId>persistence-api</artifactId>
                 <version>1.0.2</version>
             </dependency>
+	        <dependency>
+	            <groupId>org.mockito</groupId>
+	            <artifactId>mockito-core</artifactId>
+	            <version>2.0.7-beta</version>
+	        </dependency>
+            <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-lang3</artifactId>
+              <version>3.4</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -88,6 +103,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -127,10 +148,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
-                <!-- compile for Java 1.7 -->
+                <!-- compile for Java 1.8 -->
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
